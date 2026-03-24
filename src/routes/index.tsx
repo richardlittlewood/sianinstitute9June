@@ -653,10 +653,39 @@ function RegisterSection() {
     comments: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(null)
+
+    try {
+      const res = await fetch('/api/submit-registration', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          full_name: formState.name,
+          email: formState.email,
+          organisation: formState.organisation || undefined,
+          role: formState.role || undefined,
+          attendance: formState.attendance,
+          comments: formState.comments || undefined,
+        }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || 'Something went wrong. Please try again.')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const inputClass =
@@ -776,11 +805,17 @@ function RegisterSection() {
                 placeholder="Any questions or specific areas of interest..."
               />
             </div>
+            {error && (
+              <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                {error}
+              </div>
+            )}
             <button
               type="submit"
-              className="w-full py-4 rounded-full bg-sian-orange text-white font-semibold text-lg hover:bg-sian-orange-dark transition-colors shadow-lg shadow-sian-orange/30"
+              disabled={submitting}
+              className="w-full py-4 rounded-full bg-sian-orange text-white font-semibold text-lg hover:bg-sian-orange-dark transition-colors shadow-lg shadow-sian-orange/30 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Register Interest
+              {submitting ? 'Submitting…' : 'Register Interest'}
             </button>
           </form>
         )}
