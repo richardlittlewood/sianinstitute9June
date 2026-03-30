@@ -244,10 +244,10 @@ function HeroSection() {
 
         {/* Main Headline */}
         <h1 className="fluid-hero font-bold text-sian-navy leading-tight mb-8">
-          β-hydroxybutyrate (BHB)
+          Scientific Institute for Advanced Nutrition
           <br />
           <span className="fluid-hero-sub font-medium text-sian-text-muted">
-            in applied metabolic nutrition
+            β-hydroxybutyrate (BHB) in applied metabolic nutrition
           </span>
         </h1>
 
