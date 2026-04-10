@@ -22,6 +22,7 @@ import {
   Monitor,
   Video,
   Wifi,
+  Mic,
 } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
@@ -33,7 +34,7 @@ export const Route = createFileRoute('/')({
 const NAV_ITEMS = [
   { label: 'About SIAN', href: '#about-sian' },
   { label: 'About the Meeting', href: '#about-meeting' },
-  { label: 'Scientific Programme', href: '#programme' },
+  { label: 'Scientific Program', href: '#programme' },
   { label: 'Faculty', href: '#faculty' },
   { label: 'Venue & Format', href: '#venue' },
   { label: 'Register Interest', href: '#register' },
@@ -61,7 +62,7 @@ const PROGRAMME = [
   {
     title: 'Major Success: BHB in Practice',
     description: 'Real-world translation of BHB from bench to bedside in applied nutrition practice.',
-    tag: 'KEYNOTE',
+    tag: 'REVIEW',
     tagColor: 'bg-blue-100 text-blue-800',
   },
   {
@@ -94,11 +95,11 @@ const MEETING_CHAIRS = [
     initials: 'JT',
   },
   {
-    name: 'TBC',
+    name: 'Gary Millet',
     suffix: '',
     role: 'USA Chair',
-    description: 'To be confirmed.',
-    initials: '?',
+    description: 'Global pioneer in production & application of BHB.',
+    initials: 'GM',
   },
 ]
 
@@ -273,7 +274,7 @@ function HeroSection() {
             href="#programme"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-sian-orange text-white font-semibold text-lg hover:bg-sian-orange-dark transition-colors shadow-lg shadow-sian-orange/30"
           >
-            View Scientific Programme
+            View Scientific Program
           </a>
           <a
             href="#register"
@@ -447,10 +448,10 @@ function ProgrammeSection() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-sian-teal text-sm font-semibold uppercase tracking-wider mb-4">
             <BookOpen className="w-4 h-4" />
-            Scientific Programme
+            Scientific Program
           </div>
           <h2 className="fluid-section-heading md:text-4xl font-bold text-sian-navy">
-            Programme at a Glance
+            Program at a Glance
           </h2>
           <p className="mt-4 text-sian-text-muted">9 June 2026 &middot; Afternoon Session &middot; 15:00 CEST</p>
         </div>
@@ -535,6 +536,59 @@ function FacultySection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SESSION_FACULTY.map((person, i) => (
               <FacultyCard key={i} person={person} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ConfirmedSpeakersSection() {
+  const speakers = [
+    { name: 'Gary Milllet', country: 'US', focus: 'Global pioneer in invention, protection, application of BHB' },
+    { name: 'Rob Rogers', country: 'US', focus: 'Leader in high-impact BHB use & product development' },
+    { name: 'Prof Dr D Russell-Jones', country: 'UK', focus: 'Clinical expert in diabetes, including BHB applications' },
+    { name: 'Prof Dr M Laffan', country: 'UK', focus: 'Leader in defined BHB translational science' },
+    { name: 'Dr J Tsubota', country: 'JP', focus: 'Expert in microbial production of BHB' },
+    { name: 'Dr R Littlewood', country: 'UK', focus: 'Inventor of Klario (BHB product for diabetes hypos)' },
+  ]
+
+  return (
+    <section id="speakers" className="bg-[#f8faf9] w-full" style={{ padding: '80px 0' }}>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-6 lg:px-8 mobile-section-px">
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 text-sian-teal text-sm font-semibold uppercase tracking-wider mb-4">
+            <Mic className="w-4 h-4" />
+            Speakers
+          </div>
+          <h2 className="fluid-section-heading md:text-4xl font-bold text-sian-navy mb-6">
+            Confirmed Speakers
+          </h2>
+        </div>
+
+        <div
+          className="bg-white mx-auto"
+          style={{
+            borderRadius: '24px',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+            padding: '2rem 2.5rem',
+          }}
+        >
+          <div className="divide-y divide-gray-100">
+            {speakers.map((speaker, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 py-5 first:pt-2 last:pb-2"
+              >
+                <div className="text-sian-navy text-sm md:text-base">
+                  <span className="italic font-medium">{speaker.name}</span>{' '}
+                  <span className="text-sian-text-muted">({speaker.country})</span>
+                </div>
+                <div className="text-sian-text-muted text-sm md:text-base">
+                  {speaker.focus}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -703,7 +757,7 @@ function RegisterSection() {
             Register Your Interest
           </h2>
           <p className="text-sian-text-muted max-w-xl mx-auto">
-            This Special Focus Meeting is by invitation with limited capacity. Complete the form below to register your interest. You will receive further details including programme updates, venue logistics, and formal invitations as they become available.
+            This Special Focus Meeting is by invitation with limited capacity. Complete the form below to register your interest. You will receive further details including program updates, venue logistics, and formal invitations as they become available.
           </p>
         </div>
 
@@ -907,6 +961,7 @@ function SIANHome() {
       <AboutMeetingSection />
       <ProgrammeSection />
       <FacultySection />
+      <ConfirmedSpeakersSection />
       <VenueSection />
       <RegisterSection />
       <Footer />

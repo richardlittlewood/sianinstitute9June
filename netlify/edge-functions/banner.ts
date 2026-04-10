@@ -1,6 +1,6 @@
 import type { Context, Config } from '@netlify/edge-functions'
 
-const BANNER_MESSAGE = 'Draft programme for Faculty review'
+const BANNER_MESSAGE = 'Draft program for Faculty review'
 const DISMISS_PATH = '/__dismiss-banner'
 const COOKIE_NAME = 'banner-dismissed'
 const COOKIE_MAX_AGE = 2592000 // 30 days
