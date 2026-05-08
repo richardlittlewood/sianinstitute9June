@@ -32,6 +32,7 @@ export const Route = createFileRoute('/')({
 /* ──────────────── DATA ──────────────── */
 
 const NAV_ITEMS = [
+  { label: 'Confirmed Speakers', href: '#speakers' },
   { label: 'About SIAN', href: '#about-sian' },
   { label: 'About the Meeting', href: '#about-meeting' },
   { label: 'Scientific Program', href: '#programme' },
@@ -107,7 +108,7 @@ const SESSION_FACULTY = [
   {
     name: 'G. Myers',
     suffix: '',
-    role: 'CEO, Flow Health Science',
+    role: 'United Kingdom',
     description: 'Global BHB regulatory landscape.',
     initials: 'GM',
   },
@@ -244,13 +245,12 @@ function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="fluid-hero font-bold text-sian-navy leading-tight mb-8">
-          β-hydroxybutyrate (BHB)
-          <br />
-          <span className="fluid-hero-sub font-medium text-sian-text-muted">
-            in applied metabolic nutrition
-          </span>
+        <h1 className="fluid-hero font-bold text-[#004225] leading-tight mb-6">
+          BHB in applied nutrition
         </h1>
+        <p className="text-base md:text-lg text-sian-text-muted leading-relaxed max-w-3xl mx-auto mb-10">
+          Aiming to establish standards and regulatory structures following the June 9 launch. By December 2026, the SIAN Faculty will provide formal recommendations on the evolution of FDA regulation to support advanced nutrition for citizens, scientists, and industry innovators.
+        </p>
 
         {/* Event Pills */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10">
@@ -546,51 +546,54 @@ function FacultySection() {
 
 function ConfirmedSpeakersSection() {
   const speakers = [
-    { name: 'Gary Milllet', country: 'US', focus: 'Global pioneer in invention, protection, application of BHB' },
-    { name: 'Rob Rogers', country: 'US', focus: 'Leader in high-impact BHB use & product development' },
-    { name: 'Prof Dr D Russell-Jones', country: 'UK', focus: 'Clinical expert in diabetes, including BHB applications' },
-    { name: 'Prof Dr M Laffan', country: 'UK', focus: 'Leader in defined BHB translational science' },
-    { name: 'Dr J Tsubota', country: 'JP', focus: 'Expert in microbial production of BHB' },
-    { name: 'Dr R Littlewood', country: 'UK', focus: 'Inventor of Klario (BHB product for diabetes hypos)' },
+    { name: 'Dr Jun Tsubota', country: 'JP', affiliation: 'Osaka Gas Co., Ltd', bio: 'Expert in microbial production of BHB.', initials: 'JT' },
+    { name: 'Dr Mary Newport', country: 'US', affiliation: 'TriVital Therapeutics', bio: 'Pioneer in ketone therapies for neuroprotection and cellular energy.', initials: 'MN' },
+    { name: 'Prof. Dr. M. Laffan', country: 'UK', affiliation: 'Imperial College London', bio: 'Leader in defined BHB translational science.', initials: 'ML' },
+    { name: 'Dr. Elena Gross', country: 'CH', affiliation: 'KetoSwiss / University of Basel', bio: 'Specialist in clinical neuroscience and the metabolic management of chronic migraine.', initials: 'EG' },
+    { name: 'Dr. Satoshi Morita', country: 'JP', affiliation: 'Suntory Global Innovation Center', bio: 'Specialist in the cognitive benefits of metabolic signalling metabolites.', initials: 'SM' },
+    { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
+    { name: 'Prof. Dr. D. Russell-Jones', country: 'UK', affiliation: 'University of Surrey', bio: 'Clinical expert in diabetes, including BHB applications.', initials: 'DR' },
+    { name: 'Rob Lewis', country: 'UK', affiliation: '54 degrees North', bio: 'Expert in commercialisation and clinical supply chain of BHB technologies.', initials: 'RL' },
   ]
 
   return (
-    <section id="speakers" className="bg-[#f8faf9] w-full" style={{ padding: '80px 0' }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-6 lg:px-8 mobile-section-px">
+    <section id="speakers" className="py-20 md:py-28 bg-sian-bg-light">
+      <div className="max-w-6xl mx-auto px-5 md:px-6 lg:px-8 mobile-section-px">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-sian-teal text-sm font-semibold uppercase tracking-wider mb-4">
             <Mic className="w-4 h-4" />
             Speakers
           </div>
-          <h2 className="fluid-section-heading md:text-4xl font-bold text-sian-navy mb-6">
+          <h2 className="fluid-section-heading md:text-4xl font-bold text-[#004225] mb-6">
             Confirmed Speakers
           </h2>
         </div>
 
-        <div
-          className="bg-white mx-auto"
-          style={{
-            borderRadius: '24px',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-            padding: '2rem 2.5rem',
-          }}
-        >
-          <div className="divide-y divide-gray-100">
-            {speakers.map((speaker, i) => (
-              <div
-                key={i}
-                className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 py-5 first:pt-2 last:pb-2"
-              >
-                <div className="text-sian-navy text-sm md:text-base">
-                  <span className="italic font-medium">{speaker.name}</span>{' '}
-                  <span className="text-sian-text-muted">({speaker.country})</span>
-                </div>
-                <div className="text-sian-text-muted text-sm md:text-base">
-                  {speaker.focus}
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {speakers.map((speaker, i) => (
+            <div
+              key={i}
+              className="group flex flex-col items-center p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all"
+            >
+              <div className="w-20 h-20 rounded-full bg-[#004225] flex items-center justify-center mb-4">
+                <span className="text-2xl font-light text-white">
+                  {speaker.initials}
+                </span>
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-semibold text-[#004225] text-center mb-0.5">
+                <em>{speaker.name}</em>
+              </h3>
+              <span className="text-xs text-sian-text-muted mb-1">({speaker.country})</span>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sian-teal-light text-sian-teal mt-1 mb-3 text-center">
+                {speaker.affiliation}
+              </span>
+              <p className="text-sm text-sian-text-muted text-center">{speaker.bio}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl bg-gray-50 border border-gray-200 py-5 px-6 text-center">
+          <p className="text-sm font-light text-sian-text-muted italic">More speakers to be confirmed</p>
         </div>
       </div>
     </section>
@@ -957,11 +960,11 @@ function SIANHome() {
     <div className="min-h-screen bg-white">
       <Header />
       <HeroSection />
+      <ConfirmedSpeakersSection />
       <AboutSIANSection />
       <AboutMeetingSection />
       <ProgrammeSection />
       <FacultySection />
-      <ConfirmedSpeakersSection />
       <VenueSection />
       <RegisterSection />
       <Footer />
