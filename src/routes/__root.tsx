@@ -13,11 +13,11 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'SIAN — Scientific Institute for Advanced Nutrition',
+        title: 'Scientific Institute for Advanced Nutrition | SIAN Special Focus Meeting 2026',
       },
       {
         name: 'description',
-        content: 'β-hydroxybutyrate (BHB) in applied metabolic nutrition — Special Focus Meeting, 9 June',
+        content: 'Join the SIAN Special Focus Meeting on 9 June 2026. A premier event for clinicians and researchers in applied metabolic nutrition and BHB research.',
       },
     ],
   }),
