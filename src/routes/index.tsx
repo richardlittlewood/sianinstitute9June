@@ -245,17 +245,12 @@ function HeroSection() {
         </div>
 
         {/* Main Headline */}
-<<<<<<< agent-speakers-section-a8cb
-        <h1 className="fluid-hero font-bold text-[#004225] leading-tight mb-6">
-          BHB in applied nutrition
-=======
         <h1 className="fluid-hero font-bold text-sian-navy leading-tight mb-8">
           Scientific Institute for Advanced Nutrition
           <br />
           <span className="fluid-hero-sub font-medium text-sian-text-muted">
             β-hydroxybutyrate (BHB) in applied metabolic nutrition
           </span>
->>>>>>> main
         </h1>
         <p className="text-base md:text-lg text-sian-text-muted leading-relaxed max-w-3xl mx-auto mb-10">
           Aiming to establish standards and regulatory structures following the June 9 launch. By December 2026, the SIAN Faculty will provide formal recommendations on the evolution of FDA regulation to support advanced nutrition for citizens, scientists, and industry innovators.
