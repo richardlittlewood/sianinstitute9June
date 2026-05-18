@@ -292,6 +292,68 @@ function HeroSection() {
   )
 }
 
+function SponsorsSection() {
+  return (
+    <section className="bg-white">
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '40px 20px' }}>
+        <p className="text-center text-xs font-medium uppercase tracking-widest text-gray-400 mb-8">
+          Sponsors &amp; Partners
+        </p>
+
+        <div
+          className="flex flex-col sm:flex-row"
+          style={{ alignItems: 'center', justifyContent: 'center', gap: '80px' }}
+        >
+          {/* Gold Sponsor */}
+          <div className="flex flex-col items-center" style={{ gap: '12px' }}>
+            <div className="flex items-center justify-center" style={{ height: '95px' }}>
+              <img
+                src="/sponsor-osaka-gas.jpg"
+                alt="Osaka Gas / Daigas Group"
+                className="object-contain"
+                style={{ height: '95px' }}
+              />
+            </div>
+            <span style={{ color: '#D4AF37', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Gold Sponsor
+            </span>
+          </div>
+
+          {/* Silver Sponsor */}
+          <div className="flex flex-col items-center" style={{ gap: '12px' }}>
+            <div
+              className="flex items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 px-8"
+              style={{ height: '95px' }}
+            >
+              <span className="text-base text-gray-500 whitespace-nowrap font-medium">
+                Silver Sponsor: TBC
+              </span>
+            </div>
+            <span style={{ color: '#8A95A5', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Silver Sponsor
+            </span>
+          </div>
+
+          {/* Bronze Sponsor */}
+          <div className="flex flex-col items-center" style={{ gap: '12px' }}>
+            <div className="flex items-center justify-center" style={{ height: '95px' }}>
+              <img
+                src="/sponsor-suntory.jpg"
+                alt="Suntory Global Innovation Center"
+                className="object-contain"
+                style={{ height: '95px', maxWidth: '260px' }}
+              />
+            </div>
+            <span style={{ color: '#CD7F32', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Bronze Sponsor
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function AboutSIANSection() {
   const features = [
     {
@@ -550,14 +612,15 @@ function FacultySection() {
 
 function ConfirmedSpeakersSection() {
   const speakers = [
-    { name: 'Dr Jun Tsubota', country: 'JP', affiliation: 'Osaka Gas Co., Ltd', bio: 'Expert in microbial production of BHB.', initials: 'JT' },
-    { name: 'Dr Mary Newport', country: 'US', affiliation: 'TriVital Therapeutics', bio: 'Pioneer in ketone therapies for neuroprotection and cellular energy.', initials: 'MN' },
-    { name: 'Prof. Dr. M. Laffan', country: 'UK', affiliation: 'Imperial College London', bio: 'Leader in defined BHB translational science.', initials: 'ML' },
+    { name: 'Dr. Mary Newport', country: 'US', affiliation: 'TriVital Therapeutics', bio: 'Pioneer in ketone therapies for neuroprotection and cellular energy.', initials: 'MN' },
+    { name: 'Prof. Dr. Ben Bikman', country: 'US', affiliation: 'Brigham Young University', bio: 'Leading investigator in mitochondrial function.', initials: 'BB' },
     { name: 'Dr. Elena Gross', country: 'CH', affiliation: 'KetoSwiss / University of Basel', bio: 'Specialist in clinical neuroscience and the metabolic management of chronic migraine.', initials: 'EG' },
-    { name: 'Dr. Satoshi Morita', country: 'JP', affiliation: 'Suntory Global Innovation Center', bio: 'Specialist in the cognitive benefits of metabolic signalling metabolites.', initials: 'SM' },
-    { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
+    { name: 'Prof. Dr. Christina Heidt', country: 'DE', affiliation: 'Trier University of Applied Sciences', bio: 'Specialist in nutrition and rare metabolic disorders.', initials: 'CH' },
+    { name: 'Dr. Ryley Parrish', country: 'USA', affiliation: 'Brigham Young University', bio: 'Specialist in the neurobiology of epilepsy and metabolic modulation of brain excitability.', initials: 'RP' },
     { name: 'Prof. Dr. D. Russell-Jones', country: 'UK', affiliation: 'University of Surrey', bio: 'Clinical expert in diabetes, including BHB applications.', initials: 'DR' },
-    { name: 'Rob Lewis', country: 'UK', affiliation: '54 degrees North', bio: 'Expert in commercialisation and clinical supply chain of BHB technologies.', initials: 'RL' },
+    { name: 'Mr. Satoshi Morita', country: 'JP', affiliation: 'Suntory Global Innovation Center', bio: 'Specialist in the cognitive benefits of metabolic signalling metabolites.', initials: 'SM' },
+    { name: 'Dr. Jun Tsubota', country: 'JP', affiliation: 'Osaka Gas Co., Ltd', bio: 'Expert in microbial production of BHB.', initials: 'JT' },
+    { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
   ]
 
   return (
@@ -964,6 +1027,7 @@ function SIANHome() {
     <div className="min-h-screen bg-white">
       <Header />
       <HeroSection />
+      <SponsorsSection />
       <ConfirmedSpeakersSection />
       <AboutSIANSection />
       <AboutMeetingSection />
