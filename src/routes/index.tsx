@@ -613,12 +613,7 @@ function FacultySection() {
 function ConfirmedSpeakersSection() {
   const speakers = [
     { name: 'Dr. Mary Newport', country: 'US', affiliation: 'TriVital Therapeutics', bio: 'Pioneer in ketone therapies for neuroprotection and cellular energy.', initials: 'MN' },
-    { name: 'Prof. Dr. Ben Bikman', country: 'US', affiliation: 'Brigham Young University', bio: 'Leading investigator in mitochondrial function.', initials: 'BB' },
-    { name: 'Dr. Elena Gross', country: 'CH', affiliation: 'KetoSwiss / University of Basel', bio: 'Specialist in clinical neuroscience and the metabolic management of chronic migraine.', initials: 'EG' },
-    { name: 'Prof. Dr. Christina Heidt', country: 'DE', affiliation: 'Trier University of Applied Sciences', bio: 'Specialist in nutrition and rare metabolic disorders.', initials: 'CH' },
-    { name: 'Dr. Ryley Parrish', country: 'USA', affiliation: 'Brigham Young University', bio: 'Specialist in the neurobiology of epilepsy and metabolic modulation of brain excitability.', initials: 'RP' },
     { name: 'Prof. Dr. D. Russell-Jones', country: 'UK', affiliation: 'University of Surrey', bio: 'Clinical expert in diabetes, including BHB applications.', initials: 'DR' },
-    { name: 'Mr. Satoshi Morita', country: 'JP', affiliation: 'Suntory Global Innovation Center', bio: 'Specialist in the cognitive benefits of metabolic signalling metabolites.', initials: 'SM' },
     { name: 'Dr. Jun Tsubota', country: 'JP', affiliation: 'Osaka Gas Co., Ltd', bio: 'Expert in microbial production of BHB.', initials: 'JT' },
     { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
   ]
@@ -636,7 +631,7 @@ function ConfirmedSpeakersSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {speakers.map((speaker, i) => (
             <div
               key={i}

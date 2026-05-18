@@ -20,6 +20,13 @@ export const Route = createRootRoute({
         content: 'Join the SIAN Special Focus Meeting on 9 June 2026. A premier event for clinicians and researchers in applied metabolic nutrition and BHB research.',
       },
     ],
+    links: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon.png',
+      },
+    ],
   }),
   component: RootComponent,
   shellComponent: RootDocument,
