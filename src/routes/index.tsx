@@ -18,7 +18,6 @@ import {
   Heart,
   Eye,
   Lightbulb,
-  Building2,
   Monitor,
   Video,
   Wifi,
@@ -32,7 +31,7 @@ export const Route = createFileRoute('/')({
 /* ──────────────── DATA ──────────────── */
 
 const NAV_ITEMS = [
-  { label: 'Confirmed Speakers', href: '#speakers' },
+  { label: 'Confirmed Academic Speakers', href: '#speakers' },
   { label: 'About SIAN', href: '#about-sian' },
   { label: 'About the Meeting', href: '#about-meeting' },
   { label: 'Scientific Program', href: '#programme' },
@@ -41,42 +40,57 @@ const NAV_ITEMS = [
   { label: 'Register Interest', href: '#register' },
 ]
 
-const PROGRAMME = [
+const PROGRAMME_SESSIONS = [
   {
-    title: 'Past, Present and Future: The BHB Journey',
-    description: 'Opening keynote tracing the historical development of BHB research to current clinical applications and future directions.',
-    tag: 'KEYNOTE',
-    tagColor: 'bg-blue-100 text-blue-800',
+    label: 'SESSION I: KEYNOTE & CORE SCIENCE',
+    headerBg: '#E0E7FF',
+    headerText: '#3730A3',
+    items: [
+      { topic: 'Welcome & Introduction: SIAN Faculty Mission', speaker: 'Dr. Richard Littlewood (UK) & Dr. Jun Tsubota (JP)' },
+      { topic: 'Keynote: The BHB journey; What is its full potential?', speaker: 'Dr. Mary Newport (US)' },
+      { topic: 'BHB and Performance', speaker: 'Dr. Jacob Wilson (USA)' },
+      { topic: 'BHB Signalling: Impacts on Brain Function and Metabolism', speaker: 'Mr. Satoshi Morita (JP)' },
+    ],
   },
   {
-    title: 'Session 1: Standards & Worldwide Regulation',
-    description: 'Clinical applications, regulatory vision, and the global regulatory landscape for BHB products.',
-    tag: 'REGULATORY',
-    tagColor: 'bg-purple-100 text-purple-800',
+    label: 'SESSION II: SPECIALISED APPLICATIONS',
+    headerBg: '#DCFCE7',
+    headerText: '#166534',
+    items: [
+      { topic: 'The Metabolic Face of Migraine & Protective Mechanisms of BHB', speaker: 'Dr. Elena Gross (CH)' },
+      { topic: 'Break I', speaker: '' },
+      { topic: 'Mitochondrial Health: From Cellular Science to Clinical Practice', speaker: 'Prof. Dr. Ben Bikman (USA)' },
+    ],
   },
   {
-    title: 'Session 2: Innovation in BHB Supply & Production',
-    description: 'Review of BHB types (salts, esters, fermented forms) and emerging natural fermented BHB technologies.',
-    tag: 'INDUSTRY',
-    tagColor: 'bg-amber-100 text-amber-800',
+    label: 'SESSION III: WORKSHOP – SUPPLY & REGULATION, LEGAL',
+    headerBg: '#FEF9C3',
+    headerText: '#854D0E',
+    items: [
+      { topic: 'Key observations: BHB potential', speaker: 'Gary Millet & Rob Rogers' },
+      { topic: 'Innovation in BHB Biosynthesis & Industrial Supply', speaker: 'Dr. Jun Tsubota (JP)' },
+      { topic: 'Global Standards: Navigating the Regulatory Landscape', speaker: 'Dr. Richard Littlewood (UK)' },
+      { topic: 'Break II', speaker: '' },
+    ],
   },
   {
-    title: 'Major Success: BHB in Practice',
-    description: 'Real-world translation of BHB from bench to bedside in applied nutrition practice.',
-    tag: 'REVIEW',
-    tagColor: 'bg-blue-100 text-blue-800',
+    label: 'SESSION IV: SPECIALISED APPLICATIONS',
+    headerBg: '#F3E8FF',
+    headerText: '#6B21A8',
+    items: [
+      { topic: 'BHB in Practice: Management of Diabetes and Hypoglycemia', speaker: 'Prof. Dr. D. Russell-Jones (UK)' },
+      { topic: 'Insights from clinical application of BHB', speaker: 'Prof. Dr. Christina Heidt (DE)' },
+      { topic: 'BHB role in metabolic signaling in epilepsy and seizure control', speaker: 'Dr. Ryley Parrish (USA)' },
+    ],
   },
   {
-    title: 'Session 3: Clinical Applications',
-    description: 'Cutting-edge evidence in migraine, diabetes, and mechanisms of action linking biochemical insights to real-world practice.',
-    tag: 'CLINICAL',
-    tagColor: 'bg-green-100 text-green-800',
-  },
-  {
-    title: 'Session 4: Brain Function, Ageing & BHB Signalling',
-    description: 'Frontier research on brain energy metabolism, epigenetic effects, inflammatory modulation, and cellular resilience.',
-    tag: 'FUTURE SCIENCE',
-    tagColor: 'bg-teal-100 text-teal-800',
+    label: 'CLOSING KEYNOTE',
+    headerBg: '#CCFBF1',
+    headerText: '#042F2E',
+    items: [
+      { topic: 'BHB in Neuroprotection & Inflammation; Future of BHB', speaker: "Prof. Dominic D'Agostino (USA)" },
+      { topic: 'Conclusions', speaker: 'Dr. Richard Littlewood & Dr. Jun Tsubota' },
+    ],
   },
 ]
 
@@ -249,11 +263,11 @@ function HeroSection() {
           Scientific Institute for Advanced Nutrition
           <br />
           <span className="fluid-hero-sub font-medium text-sian-text-muted">
-            β-hydroxybutyrate (BHB) in applied metabolic nutrition
+            BHB in applied metabolic nutrition
           </span>
         </h1>
         <p className="text-base md:text-lg text-sian-text-muted leading-relaxed max-w-3xl mx-auto mb-10">
-          Aiming to establish standards and regulatory structures following the June 9 launch. By December 2026, the SIAN Faculty will provide formal recommendations on the evolution of FDA regulation to support advanced nutrition for citizens, scientists, and industry innovators.
+          The Scientific Institute for Advanced Nutrition (SIAN) is an independent expert group focused on bringing rigorous science and clear standards to metabolic nutrition, including BHB. SIAN brings together leaders in the field to define standards that call for high-quality, indication-specific clinical data and reliable product supply for advanced nutrition products, so they can be used with confidence by patients and clinicians under the standards of global regulators.
         </p>
 
         {/* Event Pills */}
@@ -264,11 +278,11 @@ function HeroSection() {
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-sian-teal-light text-sian-teal text-sm font-medium">
             <Clock className="w-4 h-4" />
-            Afternoon session from 15:00 CEST
+            Session from 9:00 EDT
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-sian-teal-light text-sian-teal text-sm font-medium">
             <MapPin className="w-4 h-4" />
-            Spain (On-site) · Hybrid Online
+            Online
           </div>
         </div>
 
@@ -519,30 +533,59 @@ function ProgrammeSection() {
           <h2 className="fluid-section-heading md:text-4xl font-bold text-sian-navy">
             Program at a Glance
           </h2>
-          <p className="mt-4 text-sian-text-muted">9 June 2026 &middot; Afternoon Session &middot; 15:00 CEST</p>
+          <p className="mt-4 text-sian-text-muted">9 June 2026 &middot; Online Session &middot; 9:00 EDT</p>
         </div>
 
-        <div className="flex flex-col gap-4">
-          {PROGRAMME.map((item, i) => (
-            <div
-              key={i}
-              className="rounded-2xl bg-white shadow-md hover:shadow-lg p-6 transition-all"
-            >
-              <div className="flex flex-col gap-2">
-                <div>
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${item.tagColor}`}>
-                    {item.tag}
-                  </span>
-                </div>
-                <h3 className="text-base font-semibold text-sian-navy">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-sian-text-muted leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+          <table className="w-full border-collapse">
+            <tbody>
+              {PROGRAMME_SESSIONS.map((session, si) => (
+                <>
+                  <tr key={`header-${si}`}>
+                    <td
+                      colSpan={2}
+                      className="px-6 py-3.5 text-sm font-bold tracking-wide uppercase"
+                      style={{ backgroundColor: session.headerBg, color: session.headerText }}
+                    >
+                      {session.label}
+                    </td>
+                  </tr>
+                  {session.items.map((item, ii) => {
+                    const isBreak = item.topic.startsWith('Break');
+                    if (isBreak) {
+                      return (
+                        <tr key={`${si}-${ii}`} style={{ backgroundColor: '#F9FAFB' }}>
+                          <td
+                            colSpan={2}
+                            className="px-6 py-3 text-center text-sm italic text-gray-400"
+                            style={{ borderBottom: '1px solid #E5E7EB' }}
+                          >
+                            {item.topic}
+                          </td>
+                        </tr>
+                      );
+                    }
+                    return (
+                      <tr key={`${si}-${ii}`}>
+                        <td
+                          className="px-6 py-4 text-[15px] font-semibold text-gray-800 leading-snug text-left"
+                          style={{ borderBottom: '1px solid #E5E7EB' }}
+                        >
+                          {item.topic}
+                        </td>
+                        <td
+                          className="px-6 py-4 text-sm text-gray-500 text-right whitespace-nowrap"
+                          style={{ borderBottom: '1px solid #E5E7EB' }}
+                        >
+                          {item.speaker}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -612,10 +655,17 @@ function FacultySection() {
 
 function ConfirmedSpeakersSection() {
   const speakers = [
+    { name: 'Prof. Dr. Ben Bikman', country: 'US', affiliation: 'Brigham Young University', bio: 'Leading investigator in mitochondrial function.', initials: 'BB' },
+    { name: "Prof. Dominic D'Agostino", country: 'USA', affiliation: 'University of South Florida / IHMC', bio: 'Leading expert in neuroprotection, oxygen toxicity, and metabolic therapies.', initials: 'DD' },
+    { name: 'Dr. Elena Gross', country: 'CH', affiliation: 'KetoSwiss / University of Basel', bio: 'Specialist in clinical neuroscience and the metabolic management of chronic migraine.', initials: 'EG' },
+    { name: 'Prof. Dr. Christina Heidt', country: 'DE', affiliation: 'Trier University of Applied Sciences', bio: 'Specialist in nutrition and rare metabolic disorders.', initials: 'CH' },
+    { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
+    { name: 'Mr. Satoshi Morita', country: 'JP', affiliation: 'Suntory Global Innovation Center', bio: 'Specialist in the cognitive benefits of metabolic signalling metabolites.', initials: 'SM' },
     { name: 'Dr. Mary Newport', country: 'US', affiliation: 'TriVital Therapeutics', bio: 'Pioneer in ketone therapies for neuroprotection and cellular energy.', initials: 'MN' },
+    { name: 'Dr. Ryley Parrish', country: 'USA', affiliation: 'Brigham Young University', bio: 'Specialist in the neurobiology of epilepsy and metabolic modulation of brain excitability.', initials: 'RP' },
     { name: 'Prof. Dr. D. Russell-Jones', country: 'UK', affiliation: 'University of Surrey', bio: 'Clinical expert in diabetes, including BHB applications.', initials: 'DR' },
     { name: 'Dr. Jun Tsubota', country: 'JP', affiliation: 'Osaka Gas Co., Ltd', bio: 'Expert in microbial production of BHB.', initials: 'JT' },
-    { name: 'Dr. Richard Littlewood', country: 'UK', affiliation: 'Flow Health Science', bio: 'Inventor of Klario (BHB product for diabetes hypos).', initials: 'RL' },
+    { name: 'Dr. Jacob Wilson', country: 'USA', affiliation: 'ASPI Tampa', bio: 'Specialist in BHB effects on body composition & muscle protein synthesis.', initials: 'JW' },
   ]
 
   return (
@@ -627,11 +677,11 @@ function ConfirmedSpeakersSection() {
             Speakers
           </div>
           <h2 className="fluid-section-heading md:text-4xl font-bold text-[#004225] mb-6">
-            Confirmed Speakers
+            Confirmed Academic Speakers
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {speakers.map((speaker, i) => (
             <div
               key={i}
@@ -676,49 +726,8 @@ function VenueSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* In-Person */}
-          <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-lg transition-all">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sian-teal-light flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-sian-teal" />
-              </div>
-              <h3 className="text-xl font-semibold text-sian-navy">In-Person</h3>
-            </div>
-            <div className="space-y-5">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-sian-teal mt-0.5 shrink-0" />
-                <div>
-                  <div className="text-sian-navy font-medium">Location</div>
-                  <div className="text-sm text-sian-text-muted">Spain (exact venue to be confirmed)</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Calendar className="w-5 h-5 text-sian-teal mt-0.5 shrink-0" />
-                <div>
-                  <div className="text-sian-navy font-medium">Date</div>
-                  <div className="text-sm text-sian-text-muted">9 June 2026, afternoon session</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-sian-teal mt-0.5 shrink-0" />
-                <div>
-                  <div className="text-sian-navy font-medium">Time Zone</div>
-                  <div className="text-sm text-sian-text-muted">CEST (Central European Summer Time, UTC+2) — Start: 15:00 CEST</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Users className="w-5 h-5 text-sian-teal mt-0.5 shrink-0" />
-                <div>
-                  <div className="text-sian-navy font-medium">Access</div>
-                  <div className="text-sm text-sian-text-muted">By invitation, limited capacity</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Online Participation */}
-          <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-lg transition-all">
+        <div className="flex justify-center">
+          <div className="rounded-2xl bg-white p-8 shadow-md hover:shadow-lg transition-all w-full max-w-lg">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-sian-teal-light flex items-center justify-center">
                 <Monitor className="w-6 h-6 text-sian-teal" />
@@ -744,7 +753,7 @@ function VenueSection() {
                 <Globe className="w-5 h-5 text-sian-teal mt-0.5 shrink-0" />
                 <div>
                   <div className="text-sian-navy font-medium">Time Zones</div>
-                  <div className="text-sm text-sian-text-muted">Optimised for Europe, with accessibility for Japan (evening) and US East Coast (morning)</div>
+                  <div className="text-sm text-sian-text-muted">EDT (Eastern Daylight Time, UTC-4) — Start: 9:00 EDT</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -768,7 +777,6 @@ function RegisterSection() {
     email: '',
     organisation: '',
     role: '',
-    attendance: '',
     comments: '',
   })
   const [submitted, setSubmitted] = useState(false)
@@ -789,7 +797,7 @@ function RegisterSection() {
           email: formState.email,
           organisation: formState.organisation || undefined,
           role: formState.role || undefined,
-          attendance: formState.attendance,
+
           comments: formState.comments || undefined,
         }),
       })
@@ -822,7 +830,7 @@ function RegisterSection() {
             Register Your Interest
           </h2>
           <p className="text-sian-text-muted max-w-xl mx-auto">
-            This Special Focus Meeting is by invitation with limited capacity. Complete the form below to register your interest. You will receive further details including program updates, venue logistics, and formal invitations as they become available.
+            This Special Focus Meeting is by invitation with limited capacity. Complete the form below to register your interest. You will receive further details including program updates and formal invitations as they become available.
           </p>
         </div>
 
@@ -895,22 +903,6 @@ function RegisterSection() {
                   placeholder="Senior Researcher"
                 />
               </div>
-            </div>
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-sian-navy mb-2">
-                Preferred Attendance *
-              </label>
-              <select
-                required
-                value={formState.attendance}
-                onChange={(e) => setFormState({ ...formState, attendance: e.target.value })}
-                className={inputClass}
-              >
-                <option value="">Select your preferred format</option>
-                <option value="in-person">In-Person (Spain)</option>
-                <option value="online">Online (Hybrid)</option>
-                <option value="undecided">Undecided</option>
-              </select>
             </div>
             <div className="mb-8">
               <label className="block text-sm font-medium text-sian-navy mb-2">
@@ -990,8 +982,8 @@ function Footer() {
             <ul className="space-y-3 text-sm text-white/60">
               <li>BHB Special Focus Meeting</li>
               <li>9 June 2026</li>
-              <li>Spain (On-site) &middot; Hybrid Online</li>
-              <li>Afternoon session from 15:00 CEST</li>
+              <li>Online</li>
+              <li>Session from 9:00 EDT</li>
             </ul>
           </div>
         </div>
