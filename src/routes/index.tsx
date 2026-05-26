@@ -318,7 +318,7 @@ function SponsorsSection() {
           className="flex flex-col sm:flex-row"
           style={{ alignItems: 'center', justifyContent: 'center', gap: '80px' }}
         >
-          {/* Gold Sponsor */}
+          {/* Lead Sponsor */}
           <div className="flex flex-col items-center" style={{ gap: '12px' }}>
             <div className="flex items-center justify-center" style={{ height: '95px' }}>
               <img
@@ -328,27 +328,12 @@ function SponsorsSection() {
                 style={{ height: '95px' }}
               />
             </div>
-            <span style={{ color: '#D4AF37', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Gold Sponsor
+            <span style={{ color: '#004225', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Lead Sponsor
             </span>
           </div>
 
-          {/* Silver Sponsor */}
-          <div className="flex flex-col items-center" style={{ gap: '12px' }}>
-            <div
-              className="flex items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50 px-8"
-              style={{ height: '95px' }}
-            >
-              <span className="text-base text-gray-500 whitespace-nowrap font-medium">
-                Silver Sponsor: TBC
-              </span>
-            </div>
-            <span style={{ color: '#8A95A5', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Silver Sponsor
-            </span>
-          </div>
-
-          {/* Bronze Sponsor */}
+          {/* With Support From */}
           <div className="flex flex-col items-center" style={{ gap: '12px' }}>
             <div className="flex items-center justify-center" style={{ height: '95px' }}>
               <img
@@ -358,8 +343,8 @@ function SponsorsSection() {
                 style={{ height: '95px', maxWidth: '260px' }}
               />
             </div>
-            <span style={{ color: '#CD7F32', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Bronze Sponsor
+            <span style={{ color: '#4B5563', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              With Support From
             </span>
           </div>
         </div>
