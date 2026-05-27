@@ -47,9 +47,9 @@ const PROGRAMME_SESSIONS = [
     headerText: '#3730A3',
     items: [
       { topic: 'Welcome & Introduction: SIAN Faculty Mission', speaker: 'Dr. Richard Littlewood (UK) & Dr. Jun Tsubota (JP)' },
-      { topic: 'Keynote: The BHB journey; What is its full potential?', speaker: 'Dr. Mary Newport (US)' },
-      { topic: 'BHB and Performance', speaker: 'Dr. Jacob Wilson (USA)' },
-      { topic: 'BHB Signalling: Impacts on Brain Function and Metabolism', speaker: 'Mr. Satoshi Morita (JP)' },
+      { topic: 'Presentation', speaker: 'Dr. Mary Newport (US)' },
+      { topic: 'Presentation', speaker: 'Dr. Jacob Wilson (USA)' },
+      { topic: 'Presentation', speaker: 'Mr. Satoshi Morita (JP)' },
     ],
   },
   {
@@ -57,9 +57,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#DCFCE7',
     headerText: '#166534',
     items: [
-      { topic: 'The Metabolic Face of Migraine & Protective Mechanisms of BHB', speaker: 'Dr. Elena Gross (CH)' },
+      { topic: 'Presentation', speaker: 'Dr. Elena Gross (CH)' },
       { topic: 'Break I', speaker: '' },
-      { topic: 'Mitochondrial Health: From Cellular Science to Clinical Practice', speaker: 'Prof. Dr. Ben Bikman (USA)' },
+      { topic: 'Presentation', speaker: 'Prof. Dr. Ben Bikman (USA)' },
     ],
   },
   {
@@ -67,9 +67,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#FEF9C3',
     headerText: '#854D0E',
     items: [
-      { topic: 'Key observations: BHB potential', speaker: 'Gary Millet & Rob Rogers' },
-      { topic: 'Innovation in BHB Biosynthesis & Industrial Supply', speaker: 'Dr. Jun Tsubota (JP)' },
-      { topic: 'Global Standards: Navigating the Regulatory Landscape', speaker: 'Dr. Richard Littlewood (UK)' },
+      { topic: 'Presentation', speaker: 'Gary Millet (USA) & Rob Rogers (USA)' },
+      { topic: 'Presentation', speaker: 'Dr. Jun Tsubota (JP)' },
+      { topic: 'Presentation', speaker: 'Dr. Richard Littlewood (UK)' },
       { topic: 'Break II', speaker: '' },
     ],
   },
@@ -78,9 +78,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#F3E8FF',
     headerText: '#6B21A8',
     items: [
-      { topic: 'BHB in Practice: Management of Diabetes and Hypoglycemia', speaker: 'Prof. Dr. D. Russell-Jones (UK)' },
-      { topic: 'Insights from clinical application of BHB', speaker: 'Prof. Dr. Christina Heidt (DE)' },
-      { topic: 'BHB role in metabolic signaling in epilepsy and seizure control', speaker: 'Dr. Ryley Parrish (USA)' },
+      { topic: 'Presentation', speaker: 'Prof. Dr. D. Russell-Jones (UK)' },
+      { topic: 'Presentation', speaker: 'Prof. Dr. Christina Heidt (DE)' },
+      { topic: 'Presentation', speaker: 'Dr. Ryley Parrish (USA)' },
     ],
   },
   {
@@ -88,7 +88,7 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#CCFBF1',
     headerText: '#042F2E',
     items: [
-      { topic: 'BHB in Neuroprotection & Inflammation; Future of BHB', speaker: "Prof. Dominic D'Agostino (USA)" },
+      { topic: 'Presentation', speaker: "Prof. Dominic D'Agostino (USA)" },
       { topic: 'Conclusions', speaker: 'Dr. Richard Littlewood & Dr. Jun Tsubota' },
     ],
   },
