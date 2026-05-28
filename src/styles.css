@@ -68,6 +68,35 @@ code {
   }
 }
 
+/* Programme table: stacked layout on mobile */
+@media (max-width: 768px) {
+  #programme table,
+  #programme table tbody,
+  #programme table tr,
+  #programme table td {
+    display: block;
+    width: 100%;
+  }
+
+  #programme table td {
+    text-align: left !important;
+    white-space: normal !important;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #programme table tr td:last-child:not([colspan]) {
+    padding-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  #programme table tr td:first-child:not([colspan]) {
+    border-bottom: none !important;
+    padding-bottom: 2px;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
