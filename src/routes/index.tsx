@@ -259,15 +259,16 @@ function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="fluid-hero font-bold text-sian-navy leading-tight mb-8">
+        <p className="fluid-hero-sub font-medium text-sian-text-muted tracking-wide uppercase mb-3">
           Scientific Institute for Advanced Nutrition
-          <br />
-          <span className="fluid-hero-sub font-medium text-sian-text-muted">
-            BHB in applied metabolic nutrition
-          </span>
+        </p>
+        <h1 className="fluid-hero font-bold text-sian-navy leading-tight mb-8">
+          BHB in Applied Metabolic Nutrition
         </h1>
         <p className="text-base md:text-lg text-sian-text-muted leading-relaxed max-w-3xl mx-auto mb-10">
-          The Scientific Institute for Advanced Nutrition (SIAN) is an independent expert group focused on bringing rigorous science and clear standards to metabolic nutrition, including BHB. SIAN brings together leaders in the field to define standards that call for high-quality, indication-specific clinical data and reliable product supply for advanced nutrition products, so they can be used with confidence by patients and clinicians under the standards of global regulators.
+          An exclusive global expert meeting on the cutting-edge science and regulation of BHB.
+          <br className="hidden sm:inline" />
+          {' '}Featuring foundational presentations from Prof. Dominic D'Agostino, Dr. Mary Newport, Dr. Elena Gross, and more.
         </p>
 
         {/* Event Pills */}
@@ -394,6 +395,9 @@ function AboutSIANSection() {
             The Scientific Institute for Advanced Nutrition is an independent body committed
             to advancing evidence-based metabolic nutrition through rigorous science and
             clinical translation.
+          </p>
+          <p className="text-sian-text-muted leading-relaxed text-lg mt-4">
+            SIAN is an independent expert group focused on bringing rigorous science and clear standards to metabolic nutrition, including BHB. SIAN brings together leaders in the field to define standards that call for high-quality, indication-specific clinical data and reliable product supply for advanced nutrition products, so they can be used with confidence by patients and clinicians under the standards of global regulators.
           </p>
         </div>
 
