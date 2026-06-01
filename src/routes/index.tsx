@@ -47,9 +47,9 @@ const PROGRAMME_SESSIONS = [
     headerText: '#3730A3',
     items: [
       { topic: 'Welcome & Introduction: SIAN Faculty Mission', speaker: 'Dr. Richard Littlewood (UK) & Dr. Jun Tsubota (JP)' },
-      { topic: 'Presentation', speaker: 'Dr. Mary Newport (US)' },
-      { topic: 'Presentation', speaker: 'Dr. Jacob Wilson (USA)' },
-      { topic: 'Presentation', speaker: 'Mr. Satoshi Morita (JP)' },
+      { topic: 'Beta-hydroxybutyrate (BHB): From Alternative Fuel to Applied Metabolic Nutrition for Alzheimer’s and other Brain Disorders', speaker: 'Dr. Mary Newport (US)' },
+      { topic: 'Ketones and Performance', speaker: 'Dr. Jacob Wilson (USA)' },
+      { topic: 'Functional Effects of Oral β-Hydroxybutyrate on Attention and Mental Fatigue in Healthy Adults', speaker: 'Mr. Satoshi Morita (JP)' },
     ],
   },
   {
@@ -57,9 +57,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#DCFCE7',
     headerText: '#166534',
     items: [
-      { topic: 'Presentation', speaker: 'Dr. Elena Gross (CH)' },
+      { topic: 'The Metabolic Face of Migraine & Potential Protective Mechanisms of Ketone Bodies', speaker: 'Dr. Elena Gross (CH)' },
       { topic: 'Break I', speaker: '' },
-      { topic: 'Presentation', speaker: 'Prof. Dr. Ben Bikman (USA)' },
+      { topic: 'Mitochondrial Health: From Cellular Science to Clinical Practice', speaker: 'Prof. Dr. Ben Bikman (USA)' },
     ],
   },
   {
@@ -67,9 +67,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#FEF9C3',
     headerText: '#854D0E',
     items: [
-      { topic: 'Presentation', speaker: 'Gary Millet (USA) & Rob Rogers (USA)' },
-      { topic: 'Presentation', speaker: 'Dr. Jun Tsubota (JP)' },
-      { topic: 'Presentation', speaker: 'Dr. Richard Littlewood (UK)' },
+      { topic: 'Key Observations: The Potential of BHB', speaker: 'Gary Millet (USA) & Rob Rogers (USA)' },
+      { topic: 'Innovation in D-β-Hydroxybutyrate (D-BHB) Production via Precision Fermentation and Its Low-Dose Clinical Efficacy', speaker: 'Dr. Jun Tsubota (JP)' },
+      { topic: 'BHB Supply and Clinical Application: A Pathway Forward for Optimal Consumer Access', speaker: 'Dr. Richard Littlewood (UK)' },
       { topic: 'Break II', speaker: '' },
     ],
   },
@@ -78,9 +78,9 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#F3E8FF',
     headerText: '#6B21A8',
     items: [
-      { topic: 'Presentation', speaker: 'Prof. Dr. D. Russell-Jones (UK)' },
-      { topic: 'Presentation', speaker: 'Prof. Dr. Christina Heidt (DE)' },
-      { topic: 'Presentation', speaker: 'Dr. Ryley Parrish (USA)' },
+      { topic: 'Multi-Energy Substrates in Hypoglycaemia Self-Care: Evidence Standards, Regulatory Pathways', speaker: 'Prof. Dr. D. Russell-Jones (UK)' },
+      { topic: 'Insights From Clinical Application of BHB', speaker: 'Prof. Dr. Christina Heidt (DE)' },
+      { topic: 'BHB Role in Metabolic Signaling in Epilepsy and Seizure Control', speaker: 'Dr. Ryley Parrish (USA)' },
     ],
   },
   {
@@ -88,7 +88,7 @@ const PROGRAMME_SESSIONS = [
     headerBg: '#CCFBF1',
     headerText: '#042F2E',
     items: [
-      { topic: 'Presentation', speaker: "Prof. Dominic D'Agostino (USA)" },
+      { topic: 'BHB in Neuroprotection & Inflammation; Future of BHB', speaker: "Prof. Dominic D'Agostino (USA)" },
       { topic: 'Conclusions', speaker: 'Dr. Richard Littlewood & Dr. Jun Tsubota' },
     ],
   },
@@ -557,13 +557,13 @@ function ProgrammeSection() {
                     return (
                       <tr key={`${si}-${ii}`}>
                         <td
-                          className="px-6 py-4 text-[15px] font-semibold text-gray-800 leading-snug text-left"
+                          className="px-6 py-4 text-[15px] font-semibold text-gray-800 leading-snug text-left align-top"
                           style={{ borderBottom: '1px solid #E5E7EB' }}
                         >
                           {item.topic}
                         </td>
                         <td
-                          className="px-6 py-4 text-sm text-gray-500 text-right whitespace-nowrap"
+                          className="px-6 py-4 text-sm text-gray-500 text-right whitespace-nowrap align-top"
                           style={{ borderBottom: '1px solid #E5E7EB' }}
                         >
                           {item.speaker}
