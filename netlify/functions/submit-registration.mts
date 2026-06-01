@@ -22,7 +22,7 @@ export default async (req: Request) => {
     email: string
     organisation?: string
     role?: string
-    attendance: string
+    attendance?: string
     comments?: string
   }
 
@@ -32,9 +32,9 @@ export default async (req: Request) => {
     return Response.json({ error: 'Invalid JSON body' }, { status: 400 })
   }
 
-  if (!body.full_name || !body.email || !body.attendance) {
+  if (!body.full_name || !body.email) {
     return Response.json(
-      { error: 'Missing required fields: full_name, email, and attendance are required' },
+      { error: 'Please fill in all required fields (Full Name and Email Address).' },
       { status: 400 },
     )
   }
@@ -44,7 +44,7 @@ export default async (req: Request) => {
 
     await sql`
       INSERT INTO registrations (full_name, email, organisation, role, attendance, comments)
-      VALUES (${body.full_name}, ${body.email}, ${body.organisation || null}, ${body.role || null}, ${body.attendance}, ${body.comments || null})
+      VALUES (${body.full_name}, ${body.email}, ${body.organisation || null}, ${body.role || null}, ${body.attendance || null}, ${body.comments || null})
     `
 
     return Response.json({ success: true, message: 'Registration saved successfully' })
