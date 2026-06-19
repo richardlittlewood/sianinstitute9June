@@ -22,7 +22,8 @@ export default async (req: Request) => {
     email: string
     organisation?: string
     role?: string
-    attendance?: string
+    country?: string
+    area_of_interest?: string
     comments?: string
   }
 
@@ -42,9 +43,37 @@ export default async (req: Request) => {
   try {
     const sql = neon(databaseUrl)
 
+    // Ensure the registrations table and its columns exist. This is idempotent
+    // and self-healing: it creates the table on a fresh database and adds the
+    // institute fields (country, area_of_interest) to an existing one without
+    // requiring a separate migration step.
     await sql`
-      INSERT INTO registrations (full_name, email, organisation, role, attendance, comments)
-      VALUES (${body.full_name}, ${body.email}, ${body.organisation || null}, ${body.role || null}, ${body.attendance || null}, ${body.comments || null})
+      CREATE TABLE IF NOT EXISTS registrations (
+        id SERIAL PRIMARY KEY,
+        full_name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        organisation TEXT,
+        role TEXT,
+        country TEXT,
+        area_of_interest TEXT,
+        comments TEXT,
+        created_at TIMESTAMPTZ DEFAULT now()
+      )
+    `
+    await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS country TEXT`
+    await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS area_of_interest TEXT`
+
+    await sql`
+      INSERT INTO registrations (full_name, email, organisation, role, country, area_of_interest, comments)
+      VALUES (
+        ${body.full_name},
+        ${body.email},
+        ${body.organisation || null},
+        ${body.role || null},
+        ${body.country || null},
+        ${body.area_of_interest || null},
+        ${body.comments || null}
+      )
     `
 
     return Response.json({ success: true, message: 'Registration saved successfully' })

@@ -1,18 +1,39 @@
 @import "tailwindcss" source("../");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Editorial pairing: Fraunces (serif display) for headings, Hanken Grotesk (refined sans) for body. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @theme {
+  /* ── Editorial institute palette ──
+     Warm stone backgrounds, graphite/charcoal text, restrained deep-mineral
+     green accent. Used across the institute homepage and archival pages. */
+  --color-stone: #f7f4ee;        /* primary warm off-white page background */
+  --color-stone-deep: #efe9df;   /* alternating section background */
+  --color-stone-card: #fdfcf9;   /* raised card / panel surface */
+  --color-charcoal: #20242a;     /* primary heading text */
+  --color-graphite: #4c525a;     /* body text */
+  --color-graphite-soft: #6c7178;/* muted / supporting text */
+  --color-forest: #1f4a45;       /* deep mineral green accent */
+  --color-forest-soft: #2f6f63;  /* lighter accent for hovers/links */
+  --color-forest-wash: #e7eeeb;  /* subtle accent background wash */
+  --color-line: #ded6c8;         /* hairline dividers on stone */
+  --color-line-soft: #e9e2d6;
+
+  /* ── Legacy tokens (retained for the archival meeting page) ── */
   --color-sian-navy: #10243E;
   --color-sian-teal: #1B7E82;
   --color-sian-teal-light: #e6f5f5;
   --color-sian-orange: #F4A259;
   --color-sian-orange-dark: #E67E22;
-  --color-sian-text: #10243E;
-  --color-sian-text-muted: #4a5568;
-  --color-sian-text-dim: #718096;
-  --color-sian-border: #e2e8f0;
-  --color-sian-bg: #ffffff;
-  --color-sian-bg-light: #f8fafc;
+  --color-sian-text: #20242a;
+  --color-sian-text-muted: #4c525a;
+  --color-sian-text-dim: #6c7178;
+  --color-sian-border: #ded6c8;
+  --color-sian-bg: #f7f4ee;
+  --color-sian-bg-light: #efe9df;
+
+  /* Font families — generate `font-serif` and `font-sans` utilities. */
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -21,10 +42,16 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
-  color: #10243E;
+  text-rendering: optimizeLegibility;
+  background-color: #f7f4ee;
+  color: #20242a;
+}
+
+/* Serif display headings get optical sizing for a refined editorial feel. */
+.font-serif {
+  font-optical-sizing: auto;
 }
 
 code {
@@ -33,13 +60,36 @@ code {
 
 /* Fluid Typography for large headings */
 .fluid-hero {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.75rem);
+  letter-spacing: -0.02em;
 }
 .fluid-hero-sub {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
 }
 .fluid-section-heading {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.9rem, 4vw, 2.85rem);
+  letter-spacing: -0.015em;
+}
+
+/* Small uppercase eyebrow / kicker label used above section headings. */
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Quiet entrance: a single calm fade-up, respecting reduced-motion. */
+@keyframes calm-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.calm-rise {
+  animation: calm-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .calm-rise { animation: none; }
 }
 
 /* Mobile menu drawer */
@@ -68,30 +118,30 @@ code {
   }
 }
 
-/* Programme table: stacked layout on mobile */
+/* Programme table: stacked layout on mobile (archival meeting page) */
 @media (max-width: 768px) {
-  #programme table,
-  #programme table tbody,
-  #programme table tr,
-  #programme table td {
+  .programme-table table,
+  .programme-table table tbody,
+  .programme-table table tr,
+  .programme-table table td {
     display: block;
     width: 100%;
   }
 
-  #programme table td {
+  .programme-table table td {
     text-align: left !important;
     white-space: normal !important;
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  #programme table tr td:last-child:not([colspan]) {
+  .programme-table table tr td:last-child:not([colspan]) {
     padding-top: 0;
     padding-bottom: 12px;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--color-line);
   }
 
-  #programme table tr td:first-child:not([colspan]) {
+  .programme-table table tr td:first-child:not([colspan]) {
     border-bottom: none !important;
     padding-bottom: 2px;
   }
@@ -99,15 +149,26 @@ code {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #efe9df;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: #cfc6b6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1B7E82;
+  background: #1f4a45;
+}
+
+/* Accessible focus ring consistent with the accent colour. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1f4a45;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
