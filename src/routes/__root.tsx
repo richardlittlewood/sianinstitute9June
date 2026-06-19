@@ -13,11 +13,11 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Scientific Institute for Advanced Nutrition | SIAN Special Focus Meeting 2026',
+        title: 'Scientific Institute for Advanced Nutrition (SIAN)',
       },
       {
         name: 'description',
-        content: 'Join the SIAN Special Focus Meeting on 9 June 2026. A premier event for clinicians and researchers in applied metabolic nutrition and BHB research.',
+        content: 'SIAN is an independent scientific institute advancing the science and clinical translation of BHB in metabolic nutrition. Next convening: South Florida, 8–9 December 2026.',
       },
     ],
     links: [
@@ -42,7 +42,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white text-sian-text">
+      <body className="bg-stone text-charcoal">
         {children}
         <Scripts />
       </body>
