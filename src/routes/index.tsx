@@ -46,7 +46,7 @@ function Hero() {
             Scientific Institute for Advanced Nutrition
           </h1>
           <p className="fluid-hero-sub font-serif text-forest mt-6 max-w-2xl leading-snug">
-            Advancing the science and clinical translation of BHB in metabolic nutrition
+            Advancing the science and clinical translation of advanced nutrition — with a current focus on BHB in metabolic health
           </p>
           <p className="text-graphite text-base md:text-lg leading-relaxed mt-7 max-w-2xl">
             The Scientific Institute for Advanced Nutrition is an independent scientific
@@ -54,7 +54,7 @@ function Hero() {
             science, expert dialogue, and clinically relevant translation. Building on the
             momentum of its inaugural special focus meeting, SIAN now brings forward an
             ongoing programme of scientific collaboration, faculty leadership, and focused
-            work on the role of BHB in applied metabolic nutrition.
+            work across advanced nutrition — with BHB and applied metabolic nutrition as a current focus area.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
@@ -128,10 +128,9 @@ function AboutSIAN() {
           <div className="md:col-span-7 max-w-2xl">
             <p className="text-graphite text-lg leading-relaxed">
               SIAN was established to provide an independent forum for advancing the science,
-              standards, and clinical relevance of metabolic nutrition. Its purpose is to bring
+              standards, and clinical relevance of advanced nutrition. Its purpose is to bring
               together leading experts across medicine, nutritional science, regulation, and
-              innovation to define the evidence required for responsible progress in BHB and
-              related advanced nutrition applications.
+              innovation to define the evidence required for responsible progress across key areas of nutritional science — with BHB representing its initial focus.
             </p>
             <p className="text-graphite text-lg leading-relaxed mt-6">
               The institute places particular emphasis on high-quality, indication-specific
@@ -311,7 +310,7 @@ function Faculty() {
           <p className="text-graphite text-lg leading-relaxed mt-6">
             SIAN’s work is guided by an international faculty of clinical investigators, metabolic
             scientists, regulatory experts, and production innovators — bringing deep,
-            indication-specific expertise to the science of BHB and applied metabolic nutrition.
+            indication-specific expertise to the science of advanced metabolic nutrition, with particular current focus on BHB.
           </p>
         </div>
 
