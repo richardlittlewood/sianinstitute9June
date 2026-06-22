@@ -45,8 +45,10 @@ export default async (req: Request) => {
 
     // Ensure the registrations table and its columns exist. This is idempotent
     // and self-healing: it creates the table on a fresh database and adds the
-    // institute fields (country, area_of_interest) to an existing one without
-    // requiring a separate migration step.
+    // institute fields (country, area_of_interest) and the meeting column to an
+    // existing one without requiring a separate migration step. The meeting
+    // column defaults to 'meeting_1' so pre-existing rows keep that value, while
+    // new submissions are inserted with 'meeting_2'.
     await sql`
       CREATE TABLE IF NOT EXISTS registrations (
         id SERIAL PRIMARY KEY,
@@ -62,9 +64,10 @@ export default async (req: Request) => {
     `
     await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS country TEXT`
     await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS area_of_interest TEXT`
+    await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS meeting VARCHAR(50) DEFAULT 'meeting_1'`
 
     await sql`
-      INSERT INTO registrations (full_name, email, organisation, role, country, area_of_interest, comments)
+      INSERT INTO registrations (full_name, email, organisation, role, country, area_of_interest, comments, meeting)
       VALUES (
         ${body.full_name},
         ${body.email},
@@ -72,7 +75,8 @@ export default async (req: Request) => {
         ${body.role || null},
         ${body.country || null},
         ${body.area_of_interest || null},
-        ${body.comments || null}
+        ${body.comments || null},
+        'meeting_2'
       )
     `
 
