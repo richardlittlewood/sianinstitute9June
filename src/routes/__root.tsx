@@ -17,7 +17,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'description',
-        content: 'SIAN is an independent scientific institute advancing the science and clinical translation of BHB in metabolic nutrition. Next convening: South Florida, 8–9 December 2026.',
+        content: 'SIAN is an independent scientific institute advancing the science and clinical translation of BHB in metabolic nutrition. Next convening: June 2027.',
       },
     ],
     links: [
