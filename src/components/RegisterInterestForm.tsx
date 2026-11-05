@@ -14,7 +14,7 @@ const AREAS_OF_INTEREST = [
   'Applications and translation',
   'Supply, quality, and manufacturing',
   'Regulation and standards',
-  'December 2026 meeting (South Florida)',
+  'June 2027 meeting',
   'Partnership or faculty enquiry',
 ] as const
 
@@ -92,7 +92,7 @@ export function RegisterInterestForm() {
         <h3 className="font-serif text-2xl text-charcoal mb-3">Thank you</h3>
         <p className="text-graphite max-w-md mx-auto leading-relaxed">
           Your interest has been registered. SIAN will be in touch with updates on
-          the December 2026 meeting, institute activities, and the Special Working
+          the June 2027 meeting, institute activities, and the Special Working
           Group on BHB.
         </p>
       </div>

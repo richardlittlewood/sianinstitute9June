@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { label: 'Meeting 1 Outcomes', href: '/#outcomes' },
   { label: 'Faculty', href: '/#faculty' },
   { label: 'BHB Working Group', href: '/#working-group' },
-  { label: 'December Meeting', href: '/#december' },
+  { label: 'June 2027 Meeting', href: '/#next-meeting' },
   { label: 'Register Interest', href: '/#register' },
 ]
 

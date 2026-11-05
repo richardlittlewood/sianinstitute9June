@@ -59,10 +59,10 @@ function Hero() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
             <a
-              href="#december"
+              href="#next-meeting"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-forest text-stone-card font-medium hover:bg-forest-soft transition-colors rounded-full"
             >
-              Explore the December 2026 Meeting
+              Explore the June 2027 Meeting
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
@@ -389,11 +389,11 @@ function WorkingGroup() {
   )
 }
 
-/* ──────────────── DECEMBER MEETING ──────────────── */
+/* ──────────────── NEXT MEETING ──────────────── */
 
-function DecemberMeeting() {
+function NextMeeting() {
   return (
-    <section id="december" className="scroll-mt-24 bg-charcoal text-stone py-24 md:py-32">
+    <section id="next-meeting" className="scroll-mt-24 bg-charcoal text-stone py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 mobile-section-px">
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-7">
@@ -405,10 +405,10 @@ function DecemberMeeting() {
               SIAN Meeting 2
             </h2>
             <p className="font-serif text-2xl md:text-3xl text-stone/80 mt-4">
-              South Florida &middot; 8–9 December 2026
+              June 2027
             </p>
             <p className="text-stone/70 text-lg leading-relaxed mt-8 max-w-2xl">
-              SIAN’s next convening is planned for South Florida on 8–9 December 2026 and will build
+              SIAN’s next convening is planned for June 2027 and will build
               directly on the momentum of the inaugural meeting. The programme is expected to bring
               together keynote leaders in BHB science alongside parallel workstreams focused on
               therapeutic and applied use cases, supply and manufacturing quality, and the evidence
@@ -420,7 +420,7 @@ function DecemberMeeting() {
                 href="#register"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-stone-card text-charcoal font-medium hover:bg-stone transition-colors rounded-full"
               >
-                Register interest for South Florida
+                Register interest for June 2027
                 <ArrowRight className="w-4 h-4" />
               </a>
               {/* TODO: route partnership/faculty enquiries to a dedicated address if required. */}
@@ -451,7 +451,7 @@ function DecemberMeeting() {
             </ul>
             <p className="text-stone/40 text-sm mt-8 leading-relaxed">
               {/* TODO: agenda, venue, and confirmed speakers to be added closer to the meeting. */}
-              Full agenda, venue, and speaker details to follow.
+              Dates, venue, and programme to be confirmed.
             </p>
           </aside>
         </div>
@@ -476,7 +476,7 @@ function RegisterInterest() {
             Stay connected with SIAN
           </h2>
           <p className="text-graphite text-lg leading-relaxed mt-5 max-w-xl mx-auto">
-            Register your interest to receive updates on the December 2026 meeting, future institute
+            Register your interest to receive updates on the June 2027 meeting, future institute
             activities, faculty announcements, and developments from the Special Working Group on BHB.
           </p>
         </div>
@@ -499,7 +499,7 @@ function SIANHome() {
         <SelectedInsights />
         <Faculty />
         <WorkingGroup />
-        <DecemberMeeting />
+        <NextMeeting />
         <RegisterInterest />
       </main>
       <SiteFooter />
